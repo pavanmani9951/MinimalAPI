@@ -19,8 +19,10 @@ app.MapGet("/helloworld", () => {
     return Results.BadRequest("Exception!!!!!!!!....");
     
 });
-app.MapPost("/helloworld2", () => "Helloworld2");
+app.MapPost("/helloworld2/{id:int}", (int id) => { 
+
+    return Results.Ok("added " + id);
+
+});
 
 app.Run();
-
-
